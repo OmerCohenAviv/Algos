@@ -1,4 +1,4 @@
-function mergeSortedArrs(arrOne, arrTwo) {
+function merge(arrOne, arrTwo) {
     let i = 0;
     let j = 0;
     let resultArr = [];
@@ -22,14 +22,12 @@ function mergeSortedArrs(arrOne, arrTwo) {
     }
     if (!arrOne[i]) {
         resultArr.push(...arrTwo.slice(j));
-    };
+    }
     if (!arrTwo[j]) {
         resultArr.push(...arrOne.slice(i))
-    };
+    }
     return resultArr
 }
-mergeSortedArrs([2,3,5,10,15,25], [0])
-
 function splitArray(arr) {
     let middleOfArr = Math.floor(arr.length / 2);
     const leftHalf = [...arr.slice(0, middleOfArr)]
@@ -40,12 +38,13 @@ function splitArray(arr) {
     })
 }
 
-
 function mergeSort(arr) {
     if (arr.length <= 1) return arr;
     const splittedArr = splitArray(arr);
-    const { leftHalf, rightHalf } = splittedArr
-    const left = mergeSort(leftHalf)
-    const right = mergeSort(rightHalf)
-    return (left, right)
+    const { leftHalf, rightHalf } = splittedArr;
+    const left = mergeSort(leftHalf);
+    const right = mergeSort(rightHalf);
+    return merge(left, right)
 }
+
+console.log(mergeSort([123,4,123,123,57,345,345,78456,234,2346,457,4523,4123,6,7456,0,132,123,53450,0,234]));
