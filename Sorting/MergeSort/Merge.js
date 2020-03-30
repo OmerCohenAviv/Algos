@@ -47,4 +47,4 @@ function mergeSort(arr) {
     return merge(left, right)
 }
 
-console.log(mergeSort([123,4,123,123,57,345,345,78456,234,2346,457,4523,4123,6,7456,0,132,123,53450,0,234]));
+console.log(mergeSort([123,52,34,6,1,23,123]));
